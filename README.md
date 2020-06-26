@@ -20,10 +20,12 @@ docker build -t compound-image-classifier .
 ```
 
 
-* Run a container providing mount points for image and config files.
+* Run a container dynamically providing mount points for image and config files
 
 ```
 docker run -it -v <absolute-path-to>/test_data/:/images -v <absolute-path-to>/test_configs/:/configs \
 compound-image-classifier python run_classification.py --imageDir /images/mdc_comp_test_data/ --config=/configs/config.yml
 ```
 
+## TODOs
+* Find a suitable base container with Keras & Tensorflow to improve docker build times
