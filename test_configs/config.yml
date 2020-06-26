@@ -1,0 +1,20 @@
+model:
+    name: comp_non_comp
+    filename: models/mdc_compound_fig_classifier_v1.h5
+    description: Returns COMP for compound images, NOCOMP for non-compound images
+    id: 1
+    version: 1
+    type: image
+    framework: keras
+    inputs:
+        - type: str
+          value: image_dir
+    outputs:
+        - type: str
+          value: is_compound
+    labels: 
+        0: COMP
+        1: NOCOMP
+    preprocessing:
+        rgb: true
+        scale: true
